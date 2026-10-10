@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Awareness: QR Code Phishing (Quishing)</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #f59e0b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(245, 158, 11, 0.15);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      margin: 0.5rem 0;
+      font-size: 1.75rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background-color: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+
+    .checklist {
+      margin-top: 2rem;
+      background-color: rgba(15, 23, 42, 0.3);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .checklist h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .checklist ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="header">
+      <span class="badge">Security Awareness Exercise</span>
+      <h1>You Scanned an Educational QR Code</h1>
+      <p>This demonstration highlights how easily QR codes can redirect users to arbitrary external destinations.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">1. The Threat</div>
+        <p>QR codes obscure the destination URL from plain sight. Attackers place them on parking meters, physical posters, or phishing emails to bypass standard email inspection filters.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">2. Mobile Blindspots</div>
+        <p>Scanning codes on personal phones often bypasses corporate endpoint monitoring and security agents, landing directly on mobile browsers with limited domain visibility.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">3. Credential Exposure</div>
+        <p>A malicious link can present a realistic login form designed to harvest corporate credentials or session tokens without raising immediate alarms.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">4. Device Takeover</div>
+        <p>Unvetted endpoints may attempt to push malicious profiles, payload downloaders, or force device enrollment under unauthorized mobile management systems.</p>
+      </div>
+    </div>
+
+    <div class="checklist">
+      <h3>Key Defensive Steps</h3>
+      <ul>
+        <li>Always inspect the resolved URL in your camera application before tapping to open.</li>
+        <li>Never input corporate credentials on sites accessed directly via an unexpected QR code.</li>
+        <li>Use dedicated multi-factor authentication methods like FIDO2/passkeys that bind directly to verified origins.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
